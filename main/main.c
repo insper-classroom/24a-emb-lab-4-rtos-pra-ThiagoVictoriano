@@ -41,7 +41,7 @@ void pin_callback(uint gpio, uint32_t events){
 }
 
 bool timer_0_callback(repeating_timer_t *rt) {
-    xSemaphoreGive(xSemaphore_t);
+    xSemaphoreGiveFromISR(xSemaphore_t);
     return true; // keep repeating
 }
 
